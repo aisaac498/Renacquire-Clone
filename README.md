@@ -51,7 +51,7 @@ RenAcquire_LagoSmart/
 ├── 🖼️ image/                  # Images and assets
 │   ├── favicon.ico
 │   └── logo.png
-├── 📱 webpages/               # Additional HTML pages
+├── 📱 webpages/               # Additional HTML pages (using relative paths)
 │   ├── about-us.html         # Company information
 │   ├── services.html         # Service offerings
 │   ├── industries.html       # Industry focus
@@ -226,21 +226,53 @@ The project includes screenshots of key pages in the `screenshots/` directory:
 This website is deployed using GitHub Pages and is accessible at:
 **https://aisaac498.github.io/Renacquire-Clone/**
 
+### Recent GitHub Pages Compatibility Updates
+
+**Fixed Path Issues (Latest Update):**
+- ✅ **Resolved absolute path conflicts** - All webpages now use relative paths for GitHub Pages compatibility
+- ✅ **Updated CSS/JS references** - Changed from `/styles/` to `../styles/` and `/javascript/` to `../javascript/`
+- ✅ **Fixed navigation links** - Updated internal links from `/webpages/` to relative paths
+- ✅ **Optimized asset loading** - Images and resources now load correctly on GitHub Pages
+- ✅ **Removed redundant files** - Deleted duplicate `webpages/home.html` file
+
 ### How GitHub Pages is Set Up
 
 1. **Repository Structure**: The `index.html` file in the root directory serves as the homepage
-2. **Automatic Deployment**: GitHub Pages automatically builds and deploys from the `master` branch
-3. **Custom Domain**: Can be configured in repository settings if needed
-4. **SSL**: Automatically provided by GitHub Pages
+2. **Automatic Deployment**: GitHub Pages automatically builds and deploys from the `main` branch
+3. **Path Compatibility**: All webpages use relative paths (`../`) for proper resource loading
+4. **Custom Domain**: Can be configured in repository settings if needed
+5. **SSL**: Automatically provided by GitHub Pages
+
+### Path Structure for GitHub Pages
+
+```
+GitHub Pages URL Structure:
+├── index.html (Homepage)
+└── webpages/
+    ├── about-us.html    → ../styles/, ../javascript/, ../image/
+    ├── services.html    → ../styles/, ../javascript/, ../image/
+    ├── industries.html  → ../styles/, ../javascript/, ../image/
+    ├── careers.html     → ../styles/, ../javascript/, ../image/
+    ├── contact.html     → ../styles/, ../javascript/, ../image/
+    └── events.html      → ../styles/, ../javascript/, ../image/
+```
 
 ### To Enable GitHub Pages for Your Fork
 
 1. Go to your repository settings
 2. Scroll down to "Pages" section
 3. Select "Deploy from a branch"
-4. Choose "master" branch and "/ (root)" folder
+4. Choose "main" branch and "/ (root)" folder
 5. Click "Save"
 6. Your site will be available at `https://[username].github.io/[repository-name]/`
+
+### Troubleshooting GitHub Pages
+
+If CSS/JS files don't load:
+- ✅ **Paths are now relative** - This issue has been resolved in the latest update
+- Ensure your repository is public
+- Check that GitHub Pages is enabled in settings
+- Wait a few minutes for deployment to complete
 
 ## 🤝 Contributing
 
@@ -257,3 +289,5 @@ This website is deployed using GitHub Pages and is accessible at:
 - JavaScript modules provide modular functionality
 - All images are optimized for web performance
 - The site follows modern web development best practices
+- **GitHub Pages Compatible**: All paths have been optimized for GitHub Pages deployment
+- **Relative Path Structure**: Ensures proper loading of CSS, JavaScript, and image assets
