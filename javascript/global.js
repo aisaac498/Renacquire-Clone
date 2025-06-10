@@ -176,7 +176,7 @@ function createChatModal() {
               </div>
             </a>
             
-            <a href="/webpages/contact.html" class="chat-option">
+            <a href="#" class="chat-option" data-contact-link="true">
               <div class="chat-option-icon">
                 <i class="fas fa-calendar-alt"></i>
               </div>
@@ -207,6 +207,22 @@ function createChatModal() {
 
   // Inject modal HTML into document body
   document.body.insertAdjacentHTML("beforeend", modalHTML);
+  
+  // Set up dynamic contact link based on current page location
+  setupDynamicContactLink();
+}
+
+/**
+ * Set up dynamic contact link based on current page location
+ */
+function setupDynamicContactLink() {
+  const contactLink = document.querySelector('[data-contact-link="true"]');
+  if (contactLink) {
+    // Check if we're in a webpages subdirectory or root
+    const isInWebpages = window.location.pathname.includes('/webpages/');
+    const contactUrl = isInWebpages ? 'contact.html' : 'webpages/contact.html';
+    contactLink.href = contactUrl;
+  }
 }
 
 /**

@@ -12,7 +12,7 @@
 }
 
 .events-hero::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -296,7 +296,11 @@
 .category-icon {
   width: 80px;
   height: 80px;
-  background: linear-gradient(135deg, var(--primary-color), var(--button-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--button-color)
+  );
   color: var(--white);
   border-radius: 50%;
   display: flex;
@@ -400,7 +404,11 @@
 /* Newsletter Signup Section */
 .newsletter-signup {
   padding: 100px 10%;
-  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  background: linear-gradient(
+    135deg,
+    var(--primary-color),
+    var(--secondary-color)
+  );
 }
 
 .newsletter-content {
@@ -580,10 +588,18 @@
 }
 
 /* Animation Delays for Staggered Effect */
-.fade-in:nth-child(1) { animation-delay: 0.1s; }
-.fade-in:nth-child(2) { animation-delay: 0.2s; }
-.fade-in:nth-child(3) { animation-delay: 0.3s; }
-.fade-in:nth-child(4) { animation-delay: 0.4s; }
+.fade-in:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.fade-in:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.fade-in:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.fade-in:nth-child(4) {
+  animation-delay: 0.4s;
+}
 
 /* Responsive Design */
 @media (max-width: 992px) {
@@ -612,113 +628,113 @@
     padding: 40px 20px;
   }
 
-@media (max-width: 1024px) {
+  @media (max-width: 1024px) {
+    .events-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .events-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .gallery-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  
-  .categories-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+    .gallery-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-  .newsletter-content {
-    grid-template-columns: 1fr;
-    gap: 40px;
-    text-align: center;
-  }
-}
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-@media (max-width: 768px) {
-  .hero-image {
-    height: 300px;
+    .newsletter-content {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      text-align: center;
+    }
   }
 
-  .hero-content {
-    padding: 30px 15px;
+  @media (max-width: 768px) {
+    .hero-image {
+      height: 300px;
+    }
+
+    .hero-content {
+      padding: 30px 15px;
+    }
+
+    .events-hero h1 {
+      font-size: 36px;
+    }
+
+    .events-hero p {
+      font-size: 18px;
+    }
+
+    .upcoming-events,
+    .event-categories,
+    .past-events,
+    .newsletter-signup {
+      padding: 60px 5%;
+    }
+
+    .events-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .categories-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .gallery-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+
+    .category-card {
+      padding: 30px 20px;
+    }
+
+    .newsletter-form-container {
+      padding: 30px;
+    }
+
+    .newsletter-text h3 {
+      font-size: 28px;
+    }
   }
 
-  .events-hero h1 {
-    font-size: 36px;
-  }
+  @media (max-width: 576px) {
+    .hero-image {
+      height: 250px;
+    }
 
-  .events-hero p {
-    font-size: 18px;
-  }
+    .hero-content {
+      padding: 25px 15px;
+    }
 
-  .upcoming-events,
-  .event-categories,
-  .past-events,
-  .newsletter-signup {
-    padding: 60px 5%;
-  }
+    .events-hero h1 {
+      font-size: 28px;
+    }
 
-  .events-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .section-heading {
+      font-size: 28px;
+    }
 
-  .categories-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .event-content {
+      padding: 20px;
+    }
 
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
+    .event-details {
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-start;
+    }
 
-  .category-card {
-    padding: 30px 20px;
-  }
+    .category-icon {
+      width: 60px;
+      height: 60px;
+      font-size: 24px;
+    }
 
-  .newsletter-form-container {
-    padding: 30px;
-  }
-
-  .newsletter-text h3 {
-    font-size: 28px;
-  }
-}
-
-@media (max-width: 576px) {
-  .hero-image {
-    height: 250px;
-  }
-
-  .hero-content {
-    padding: 25px 15px;
-  }
-
-  .events-hero h1 {
-    font-size: 28px;
-  }
-
-  .section-heading {
-    font-size: 28px;
-  }
-
-  .event-content {
-    padding: 20px;
-  }
-
-  .event-details {
-    flex-direction: column;
-    gap: 10px;
-    align-items: flex-start;
-  }
-
-  .category-icon {
-    width: 60px;
-    height: 60px;
-    font-size: 24px;
-  }
-
-  .newsletter-form-container {
-    padding: 20px;
+    .newsletter-form-container {
+      padding: 20px;
+    }
   }
 }

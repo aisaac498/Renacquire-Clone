@@ -138,8 +138,18 @@
               allowfullscreen=""
               loading="lazy"
               referrerpolicy="no-referrer-when-downgrade"
+              title="RenAcquire Office Location"
+              onerror="this.style.display='none'; document.getElementById('map-fallback').style.display='block';"
             >
             </iframe>
+            <div id="map-fallback" style="display: none; background: #f8f9fa; padding: 40px; text-align: center; border-radius: 8px; height: 400px; align-items: center; justify-content: center; flex-direction: column;">
+              <i class="fas fa-map-marker-alt" style="font-size: 3rem; color: var(--primary-color); margin-bottom: 20px;"></i>
+              <h3 style="color: var(--primary-color); margin-bottom: 10px;">Our Location</h3>
+              <p style="color: var(--secondary-color); margin-bottom: 15px;">123 Financial Avenue, New York, NY 10001</p>
+              <a href="https://maps.google.com/?q=123+Financial+Avenue,+New+York,+NY+10001" target="_blank" style="background: var(--button-color); color: white; padding: 12px 24px; text-decoration: none; border-radius: 5px; font-weight: 600;">
+                View on Google Maps
+              </a>
+            </div>
           </div>
         </div>
       </section>

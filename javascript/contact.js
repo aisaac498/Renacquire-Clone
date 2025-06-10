@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function() {
     initContactForm();
     initCountryDropdown();
     initScrollAnimations();
+    
+    // Handle Google Maps iframe errors
+    handleMapErrors();
 });
 
 // Contact form handling
@@ -655,3 +658,50 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Handle Google Maps iframe errors
+function handleMapErrors() {
+    // Add global error handler for iframe content
+    window.addEventListener('error', function(event) {
+        // Check if error is from Google Maps
+        if (event.filename && (
+            event.filename.includes('maps.googleapis.com') ||
+            event.filename.includes('maps.google.com') ||
+            event.message.includes('maps')
+        )) {
+            // Silently handle the error to prevent console spam
+            event.preventDefault();
+            return true;
+        }
+    }, true);
+    
+    // Monitor iframe loading and provide fallback
+    const mapIframe = document.querySelector('.map-container iframe');
+    if (mapIframe) {
+        // Set a timeout to check if map loaded successfully
+        let mapLoadTimeout = setTimeout(() => {
+            // If iframe fails to load after 10 seconds, show fallback
+            if (!mapIframe.contentDocument || mapIframe.contentDocument.body.innerHTML === '') {
+                mapIframe.style.display = 'none';
+                const fallback = document.getElementById('map-fallback');
+                if (fallback) {
+                    fallback.style.display = 'flex';
+                }
+            }
+        }, 10000);
+        
+        // Clear timeout if iframe loads successfully
+        mapIframe.addEventListener('load', function() {
+            clearTimeout(mapLoadTimeout);
+        });
+        
+        mapIframe.addEventListener('error', function() {
+            clearTimeout(mapLoadTimeout);
+            this.style.display = 'none';
+            const fallback = document.getElementById('map-fallback');
+            if (fallback) {
+                fallback.style.display = 'flex';
+            }
+        });
+    }
+}
