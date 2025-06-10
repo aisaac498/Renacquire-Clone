@@ -1,0 +1,410 @@
+/* =============================================================================
+   INDUSTRIES PAGE STYLES - RenAcquire Investment Banking
+   ============================================================================= */
+
+
+/* Industries Hero Section */
+.industries-hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #006b78 100%);
+  color: white;
+  position: relative;
+  height: calc(100vh - 80px);
+  display: flex;
+  align-items: stretch;
+}
+
+/* Ensure full width hero overrides any global container styles */
+body .industries-hero .container {
+  width: 100% !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.industries-hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 73, 82, 0.85);
+  z-index: 1;
+}
+
+.industries-hero .container {
+  position: relative;
+  z-index: 2;
+  width: 100% !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  min-height: calc(100vh - 80px);
+  align-items: stretch;
+}
+
+.hero-content {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: rgba(0, 73, 82, 0.9);
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-family: var(--font-display);
+}
+
+.hero-content p {
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  opacity: 0.95;
+}
+
+.hero-image {
+  position: relative;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+/* Industries Grid Section */
+.industries-grid-section {
+  padding: 100px 0;
+  background: var(--white);
+}
+
+.industries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+
+.industry-item {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.industry-item:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.industry-item:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.industry-item:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.industry-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.industry-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.industry-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.industry-item:hover .industry-image img {
+  transform: scale(1.05);
+}
+
+.industry-content {
+  padding: 30px;
+}
+
+.industry-content h3 {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 15px;
+}
+
+.industry-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+
+/* News & Insights Section */
+.news-insights {
+  padding: 100px 0;
+  background: var(--light-bg);
+}
+
+.news-insights h2 {
+  font-size: 42px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.insight-item {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.insight-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+.insight-image {
+  position: relative;
+  overflow: hidden;
+  height: 200px;
+}
+
+.insight-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.insight-item:hover .insight-image img {
+  transform: scale(1.05);
+}
+
+.insight-content {
+  padding: 25px;
+}
+
+.insight-content h3 {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--primary-color);
+  margin-bottom: 12px;
+}
+
+.insight-content p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: var(--secondary-color);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .industries-hero {
+    min-height: auto;
+    align-items: center;
+  }
+
+  .industries-hero .container {
+    padding: 0 20px !important;
+    max-width: none !important;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+    min-height: auto;
+  }
+
+  .hero-image {
+    height: 400px;
+    order: -1;
+  }
+
+  .hero-content {
+    text-align: center;
+    padding: 40px 20px;
+  }
+
+  .industries-grid,
+  .insights-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .news-insights h2 {
+    font-size: 36px;
+  }
+}
+
+@media (max-width: 768px) {
+  .industries-hero .container {
+    padding: 0 !important;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+
+  .hero-content {
+    padding: 30px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 36px;
+  }
+
+  .industries-grid-section,
+  .news-insights {
+    padding: 60px 0;
+  }
+
+  .industries-grid,
+  .insights-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .news-insights h2 {
+    font-size: 28px;
+    margin-bottom: 40px;
+  }
+
+  .hero-image img {
+    height: 300px;
+    margin: 0;
+  }
+}
+
+/* Landscape mobile devices */
+@media (max-width: 896px) and (orientation: landscape) {
+  .industries-hero {
+    min-height: 70vh;
+  }
+
+  .hero-content {
+    padding: 30px 20px;
+    text-align: center;
+  }
+
+  .hero-content h1 {
+    font-size: 40px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .hero-image {
+    height: 70vh;
+  }
+}
+
+@media (max-width: 576px) {
+  .industries-hero .container {
+    padding: 0 !important;
+  }
+
+  .hero-image {
+    height: 250px;
+  }
+
+  .hero-content {
+    padding: 25px 15px;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .container {
+    padding: 0 15px;
+  }
+
+  .hero-container {
+    padding: 0 15px;
+  }
+
+  .industries-hero {
+    padding: 60px 0;
+  }
+
+  .industries-grid-section,
+  .news-insights {
+    padding: 40px 0;
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .news-insights h2 {
+    font-size: 24px;
+  }
+
+  .industry-content,
+  .insight-content {
+    padding: 20px;
+  }
+
+  .hero-image img {
+    height: 250px;
+    margin: 0;
+  }
+}

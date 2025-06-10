@@ -1,0 +1,79 @@
+/* Hero Section - Method 2: Flexbox */
+.hero {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #006b78 100%);
+  color: white;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 73, 82, 0.85);
+  z-index: 1;
+}
+
+.hero .container {
+  flex: 1;
+  display: flex;
+  margin-top: 80px;
+  position: relative;
+  z-index: 2;
+  width: 100% !important;
+  padding: 0 !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.hero-grid {
+  display: flex;
+  width: 100%;
+  flex: 1;
+}
+
+.hero-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: rgba(0, 73, 82, 0.9);
+  position: relative;
+  z-index: 3;
+}
+
+.hero-content h1 {
+  color: white;
+  font-size: 56px;
+  font-weight: 700;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  font-family: var(--font-display);
+}
+
+.hero-content p {
+  color: white;
+  font-size: 20px;
+  line-height: 1.6;
+  margin-bottom: 40px;
+  opacity: 0.95;
+}
+
+.hero-image {
+  flex: 1;
+  position: relative;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
