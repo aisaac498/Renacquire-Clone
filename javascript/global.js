@@ -156,7 +156,7 @@ function createChatModal() {
         
         <div class="chat-body">
           <div class="chat-options">
-            <a class="chat-option">
+            <a href="tel:+2348141325535" class="chat-option">
               <div class="chat-option-icon">
                 <i class="fas fa-phone"></i>
               </div>
@@ -166,7 +166,7 @@ function createChatModal() {
               </div>
             </a>
             
-            <a class="chat-option">
+            <a href="mailto:funke.okoya@renacquire.com" class="chat-option">
               <div class="chat-option-icon">
                 <i class="fas fa-envelope"></i>
               </div>
@@ -186,7 +186,7 @@ function createChatModal() {
               </div>
             </a>
             
-            <a class="chat-option" target="_blank">
+            <a href="https://wa.me/2348141325535" class="chat-option" target="_blank">
               <div class="chat-option-icon">
                 <i class="fab fa-whatsapp"></i>
               </div>
